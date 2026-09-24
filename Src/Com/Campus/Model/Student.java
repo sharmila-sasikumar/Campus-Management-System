@@ -3,7 +3,7 @@ package Com.Campus.Model;
 public class Student {
     // Encapsulation-data hiding
     // instance variables
-    private String studentid;
+    private int studentid;
     private String studentname;
     private int age;
     private String department;
@@ -18,7 +18,7 @@ public class Student {
     }
 
     // parameterized constructor
-    public Student(String studentid, String studentname, int age, String department, int[] marks) {
+    public Student(int studentid, String studentname, int age, String department, int[] marks) {
         this.studentid = studentid;
         this.studentname = studentname;
         this.age = age;
@@ -28,7 +28,7 @@ public class Student {
     }
 
     // getters
-    public String getStudentid() {
+    public int getStudentid() {
         return studentid;
     }
 
@@ -49,7 +49,7 @@ public class Student {
     }
 
     // setters
-    public void setStudentid(String studentid) {
+    public void setStudentid(int studentid) {
         this.studentid = studentid;
     }
 
