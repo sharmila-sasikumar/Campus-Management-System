@@ -2,6 +2,7 @@ package Com.Campus.App;
 import java.util.Scanner;
 import Com.Campus.Model.Student;
 import Com.Campus.Service.StudentService;
+import Com.Campus.Model.Scholarshipstudent;
 
 public class Main {
 
@@ -25,7 +26,10 @@ public class Main {
                 marks[i] = scanner.nextInt();
                 scanner.nextLine(); // Consume the newline character after reading an integer
             }
-            Student student = new Student(studentId, studentName, studentAge, studentDepartment, marks);
+            System.out.println("enter the scholarship percentage");
+            double scholarshipPercentage = scanner.nextDouble();
+            scanner.nextLine(); // Consume the newline character after reading a double
+            Student student = new Scholarshipstudent(studentId, studentName, studentAge, studentDepartment, marks, scholarshipPercentage);
             student.displayStudentInfo(true);
             Student.displayStudentCount();
             StudentService studentService = new StudentService();

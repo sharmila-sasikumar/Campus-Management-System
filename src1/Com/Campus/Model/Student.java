@@ -1,6 +1,8 @@
 package Com.Campus.Model;
+import Com.Campus.contract.StudentOperations;
 
-public class Student {
+
+public abstract class Student implements StudentOperations  {
     // Encapsulation-data hiding
     // instance variables
     private int studentid;
@@ -78,6 +80,9 @@ public class Student {
         System.out.print("Marks: ");
 
     }
+
+    //abstract method
+    public abstract void studentType();
 
     public void displayStudentInfo(boolean showMarks) {
         displayStudentInfo();
