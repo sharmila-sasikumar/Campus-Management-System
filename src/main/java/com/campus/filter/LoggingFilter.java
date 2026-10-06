@@ -1,23 +1,21 @@
-package main.java.com.campus.filter;
+package com.campus.filter;
 
-public class LoggingFilter {
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpFilter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import java.io.IOException;
+
+@WebFilter("/*")
+public class LoggingFilter extends HttpFilter {
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        System.out.println("Request received");
+        chain.doFilter(request, response);
+        System.out.println("Response sent");
+    }
     
-
-   @webFilter("/*")
-    public class LoggingFilter extends Filter {
-       
-
-        @Override
-        public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-                throws IOException, ServletException {
-            HttpServletRequest httpRequest = (HttpServletRequest) request;
-            System.out.println("Incoming request: " + httpRequest.getMethod() + " " + httpRequest.getRequestURI());
-            chain.doFilter(request, response);
-        }
-
-        @Override
-        public void destroy() {
-            // Cleanup code if needed
-        }
-    } 
 }
